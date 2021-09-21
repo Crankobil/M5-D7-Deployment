@@ -3,6 +3,7 @@ import cors from "cors";
 import listEndpoints from "express-list-endpoints"
 import filesRouter from "./services/files/index.js";
 import productRouter from "./services/products/index.js";
+import reviewsRouter from "./services/reviews/index.js"
 import {publicFolderPath} from './services/files/index.js'
 
 
@@ -19,6 +20,7 @@ server.use(express.json());
 //******************** ENDPOINTS **************************/
 server.use("/files", filesRouter);
 server.use("/products", productRouter);
+server.use("/reviews", reviewsRouter);
 
 server.listen(PORT, () => console.log("Server is running on port : ", PORT));
 
